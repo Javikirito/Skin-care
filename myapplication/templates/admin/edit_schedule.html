@@ -1,0 +1,47 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/admin_edit_schedule_post">
+  <table width="200" border="1">
+
+  <input type="hidden" name="schid" value="{{ vsh.id }}"/>
+
+    <tr>
+      <td scope="col">Department</td>
+      <td colspan="2" scope="col"><select name="select">
+          {% for i in dep %}
+              <option value="{{ i.id }}">{{ i.department}}</option>
+
+          {% endfor %}
+
+      </select>      </td>
+    </tr>
+    <tr>
+      <td scope="row">Doctor</td>
+      <td colspan="2"><select name="select2">
+
+      {% for i in doc %}
+          <option value="{{ i.id }}">{{ i.name }}</option>
+
+       {% endfor %}
+      </select>      </td>
+    </tr>
+    <tr>
+      <td scope="row">Date</td>
+      <td colspan="2"><input type="date" name="textfield" value="{{ vsh.date }}" /></td>
+    </tr>
+    <tr>
+      <td rowspan="2" scope="row">Time</td>
+      <td>FROM</td>
+      <td>TO</td>
+    </tr>
+    <tr>
+      <td><input type="time" name="textfield2" value="{{ vsh.time }}" /></td>
+      <td><input type="time" name="textfield3" value="{{ vsh.timeto }}" /></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="row"><input type="submit" class="btn btn-dark" name="Submit" value="Submit" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

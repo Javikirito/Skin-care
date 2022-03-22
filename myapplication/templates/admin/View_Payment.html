@@ -1,0 +1,40 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+
+
+    <form id="form1" name="form1" method="post" action="/myapplication/viewpayments_post">
+<table class="table table-bordered" >
+
+  <tr>
+    <th ><input type="date" name="textfield"  class="form-control" /></th>
+    <th scope="col"><input type="submit" name="Submit" value="Search" class="btn btn-dark" /></th>
+  </tr>
+</table>
+<p>&nbsp;</p>
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">SNo</th>
+      <th width="202" scope="col">Name</th>
+      <th width="121" scope="col">Date</th>
+      <th width="74" scope="col">Time</th>
+      <th width="120" scope="col">Place</th>
+      <th width="127" scope="col">Contact</th>
+      <th width="134" scope="col">Booking Detail </th>
+      <th width="105" scope="col">Amount</th>
+    </tr>
+      {% for i in vps %}
+    <tr>
+      <td width="50px">{{ forloop.counter }}&nbsp;</td>
+      <td>{{ i.BOOKING.USER.name }}</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>{{ i.BOOKING.SCHEDULE.time }}&nbsp;</td>
+      <td>{{ i.BOOKING.USER.place }}&nbsp;</td>
+      <td>{{ i.BOOKING.USER.contact }}&nbsp;</td>
+      <td>{{ i.BOOKING.status}}&nbsp;</td>
+      <td>{{ i.amount }}&nbsp;</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

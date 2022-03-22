@@ -1,0 +1,26 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+</form>
+<table class="table table-bordered">
+  <tr>
+    <th  scope="col">SNo</th>
+    <th width="86" scope="col">Date</th>
+    <th width="134" scope="col">Doctor</th>
+    <th width="88" scope="col">User</th>
+    <th width="179" scope="col">Feedback</th>
+    <th width="179" scope="col">Rating</th>
+  </tr>
+    {% for i in res %}
+  <tr>
+    <th width="50px">{{ forloop.counter }}&nbsp;</th>
+    <td>&nbsp;{{ i.date }}</td>
+    <td>{{ i.DOCTOR.name }}&nbsp;</td>
+    <td>{{ i.USER.name}}&nbsp;</td>
+    <td>{{ i.feedback }}&nbsp;</td>
+    <td>{{ i.rating }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+{% endblock %}

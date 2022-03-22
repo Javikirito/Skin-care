@@ -1,0 +1,31 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/viewsymptoms_post">
+  <table class="table table-bordered">
+    <tr>
+      <th ><input type="text" name="textfield" class="form-control" /></th>
+      <th scope="col"><input type="submit" name="Submit" value="Search" class="btn btn-dark" /></th>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">SNo</th>
+      <th width="148" scope="col">Symptoms</th>
+      <th width="42" scope="col">&nbsp;</th>
+      <th width="49" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in vsp %}
+
+    <tr>
+      <td width="50px">{{ forloop.counter }}&nbsp;</td>
+      <td>{{ i.sympt }}&nbsp;</td>
+      <td width="50px"><a href="/myapplication/edit_symptoms/{{ i.id }}" class="btn btn-info">Edit</a></td>
+      <td width="50px"><a href="/myapplication/delete_symptoms/{{ i.id }}" class="btn btn-danger">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

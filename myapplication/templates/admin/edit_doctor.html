@@ -1,0 +1,99 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form action="/myapplication/admin_edit_doctor_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="362" border="1">
+
+
+
+  <input type="hidden" name="did" value="{{ vdr.id }}"/>
+
+
+    <tr>
+      <td>Name</td>
+      <td><input type="text" name="textfield" value="{{ vdr.name }}" /></td>
+    </tr>
+    <tr>
+      <td>Date of Birth </td>
+      <td><input type="date" name="textfield2"   value="{{ vdr.dob }}"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><p>
+        <label>
+          <input type="radio" name="RadioGroup1" value="Male" />
+          Male</label>
+        <br />
+        <label>
+          <input type="radio" name="RadioGroup1" value="Female" />
+          Female</label>
+        <br />
+        <label>
+          <input type="radio" name="RadioGroup1" value="Others" />
+          Others</label>
+        <br />
+      </p></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><select name="select" size="1">
+                <option value="{{ vdr.qual }}">{{ vdr.qual }}</option>
+          <option value="mbbs">MBBS</option>
+           <option value="bams">BAMS</option>
+           <option value="ahms">AHMS</option>
+            </select></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="file" /></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><input type="text" name="textfield3" value="{{ vdr.place }}" /></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><input type="text" name="textfield4" value="{{ vdr.pin }}" /></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><input type="text" name="textfield5" value="{{ vdr.post }}" /></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><input type="text" name="textfield6" value="{{ vdr.district }}" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="textfield7"  value="{{ vdr.email }}"/></td>
+    </tr>
+    <tr>
+      <td>Department</td>
+      <td><select name="select2" >
+                <option value="{{ depts.id }}">{{ depts.department }}</option>
+
+          {% for i in data %}
+
+          <option value="{{ i.id }}">{{ i.department }}</option>
+
+
+         {% endfor %}
+
+
+
+      </select>      </td>
+    </tr>
+    
+    
+    <tr>
+      <td>Contact No. </td>
+      <td><input type="text" name="textfield8" value="{{ vdr.contact }}" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit"  class="btn btn-dark" value="Submit" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

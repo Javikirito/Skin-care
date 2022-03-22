@@ -1,0 +1,26 @@
+{% extends 'doctor/doctor_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width="14" rowspan="2" scope="col">SNo</th>
+      <th width="47" rowspan="2" scope="col">Date</th>
+      <th colspan="2" scope="col">Time</th>
+      <th width="115" rowspan="2" scope="col">&nbsp;</th>
+    </tr>
+    <tr>
+      <th width="75" scope="col">From</th>
+      <th width="84" scope="col">To</th>
+    </tr>
+      {% for i in a %}
+    <tr>
+      <th width="50px">{{ forloop.counter }}&nbsp;</th>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>{{ i.time }}&nbsp;</td>
+      <td>{{ i.timeto }}&nbsp;</td>
+      <td><a href="/myapplication/doctor_viewpatient/{{ i.id }}">Patient's </a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

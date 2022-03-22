@@ -1,0 +1,16 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/patient_send_feedback_abt_dct_post">
+  <table class="table table-bordered">
+    <tr>
+      <th scope="col">Feedback <input type="hidden" value="{{ feed }}" name="did"/></th>
+    </tr>
+    <tr>
+      <th height="100" scope="row"><textarea  name="textfield" class="form-control" ></textarea></th>
+    </tr>
+    <tr>
+      <th scope="row"><input type="submit" name="Submit" value="Submit"  class="btn btn-primary"/></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'doctor/doctor_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width="15" scope="col">SNo</th>
+      <th width="71" scope="col">Name</th>
+      <th width="38" scope="col">Photo</th>
+      <th width="27" scope="col">Age</th>
+      <th width="72" scope="col">Gender</th>
+      <th width="92" scope="col">Place</th>
+      <th width="140" scope="col">Contact</th>
+{#      <th width="179" scope="col">Symptoms</th>#}
+    </tr>
+       {% for i in a %}
+    <tr>
+     <td width="50px">{{ forloop.counter }}&nbsp;</td>
+      <td>&nbsp;{{ i.USER.name }}</td>
+      <td><img src="{{ i.USER.photo }}" height="200px" width="200px"></td>
+      <td>{{ i.USER.age }}</td>
+      <td>{{ i.USER.gender }}&nbsp;</td>
+      <td>{{ i.USER.place }}&nbsp;</td>
+      <td>{{ i.USER.contact }}&nbsp;</td>
+{#      <td></td>#}
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+{% endblock %}

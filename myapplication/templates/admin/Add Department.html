@@ -1,0 +1,14 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/admin_adddepartment_post/">
+  <table  class="table table-bordered"><tr>
+      <th width="150px">Department</th>&nbsp;&nbsp;&nbsp;
+      &nbsp;<th scope="col"><input type="text" name="textfield" class="form-control" required  /></th>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td><input type="submit" name="Submit"  class="btn btn-dark"value="Submit" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

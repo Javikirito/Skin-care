@@ -1,0 +1,28 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td scope="col">Bank</td>
+      <td scope="col"><select name="select">
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Account number </th>
+      <td><input type="text" name="textfield" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Amount</th>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td><input type="password" name="textfield2" /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="Pay" class="btn btn-dark" /></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

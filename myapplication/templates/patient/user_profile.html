@@ -1,0 +1,35 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+
+<table class="table table-bordered">
+  <tr>
+    <th colspan="2" scope="col"><img src="{{ pup.photo }}" style="width: 200px;height: 200px;" >&nbsp;</th>
+  </tr>
+  <tr>
+    <th scope="row">Name</th>
+    <td>&nbsp;{{ pup.name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Age</th>
+    <td>{{ pup.age }} </td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td>&nbsp;{{ pup.gender }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Address</th>
+    <td>&nbsp;{{ pup.place }}<br><br>
+    {{ pup.post }}<br><br>
+    {{ pup.pin }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Contact</th>
+    <td>&nbsp;{{ pup.contact }}</td>
+  </tr>
+  <tr>
+    <th scope="row">E-mail</th>
+    <td>&nbsp;{{ pup.email }}</td>
+  </tr>
+</table>
+{% endblock %}

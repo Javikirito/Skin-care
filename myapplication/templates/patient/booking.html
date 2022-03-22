@@ -1,0 +1,30 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+<table class="table table-bordered">
+  <tr>
+    <th width="80" scope="row">Doctor name </th>
+    <td colspan="2">{{ a.SCHEDULE.DOCTOR.name }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Department</th>
+    <td colspan="2">{{ a.SCHEDULE.DEPARTMENT.department}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Date</th>
+    <td colspan="2">{{ a.SCHEDULE.date }}    </td>
+  </tr>
+  <tr>
+    <th rowspan="2" scope="row">Time</th>
+    <th width="93">FROM</th>
+    <th width="91">TO</th>
+  </tr>
+  <tr>
+    <td> {{ a.SCHEDULE.time }}   </td>
+    <td> {{ a.SCHEDULE.timeto }}   </td>
+  </tr>
+    <h2><b>BOOKING CONFIRMED</b></h2>
+  <tr>
+    <td width="50px"><a href="/myapplication/patient_view_booking" class="btn btn-outline-primary">My Bookings</a></td>
+  </tr>
+</table>
+{% endblock %}

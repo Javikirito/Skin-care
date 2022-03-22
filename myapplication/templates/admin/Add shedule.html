@@ -1,0 +1,51 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/admin_addschedule_post/">
+   <table class="table table-bordered" >
+    <tr>
+      <td scope="col">DEPARTMENT &nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td colspan="2" scope="col"><select name="select">
+
+
+
+          {% for i in dep %}
+              <option value="{{ i.id }}">{{ i.department}}</option>
+
+          {% endfor %}
+
+
+
+
+
+      </select>      </td>
+    </tr>
+    <tr>
+      <td scope="row">DOCTOR</td>
+      <td colspan="2"><select name="select2">
+
+      {% for i in doc %}
+          <option value="{{ i.id }}">{{ i.name }}</option>
+
+       {% endfor %}
+      </select>      </td>
+    </tr>
+    <tr>
+      <td scope="row">DATE</td>
+      <td colspan="2"><input type="date" name="textfield" /></td>
+    </tr>
+    <tr>
+      <td rowspan="2" scope="row">TIME</td>
+      <td>FROM</td>
+      <td>TO</td>
+    </tr>
+    <tr>
+      <td><input type="time" name="textfield2" /></td>
+      <td><input type="time" name="textfield3" /></td>
+    </tr>
+    <tr>
+      <th colspan="3" scope="row"><input type="submit" name="Submit" class="btn btn-dark" value="SUBMIT" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

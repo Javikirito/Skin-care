@@ -1,0 +1,29 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="315" border="1">
+    <tr>
+      <td scope="col">Bank</td>
+      <td scope="col"><select name="select">
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">Account number </td>
+      <td><input type="text" name="textfield" /></td>
+    </tr>
+    <tr>
+      <td scope="row">Amount</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td scope="row">Password</td>
+      <td><input type="password" name="textfield2" /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" class="btn btn-dark" value="Submit" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

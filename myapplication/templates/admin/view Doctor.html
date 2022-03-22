@@ -1,0 +1,50 @@
+
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/viewdoctor_post">
+  <table class="table table-bordered" >
+    <tr>
+      <th><input type="text" name="textfield" class="form-control" /></th>
+      <th scope="col"><input type="submit" name="Submit" value="Search" class="btn btn-dark"/></th>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered" >
+    <tr>
+      <th scope="col">SNo</th>
+      <th width="100" scope="col">Name</th>
+      <th width="90" scope="col">Date of Birth </th>
+      <th width="52" scope="col">Gender</th>
+      <th width="88" scope="col">Qualification</th>
+      <th width="37" scope="col">Address</th>
+      <th width="39" scope="col">Email</th>
+      <th width="4" scope="col">&nbsp;</th>
+      <th width="12" scope="col"></th>
+        <th width="4" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in vdr %}
+    <tr>
+      <td width="50px">{{ forloop.counter }}&nbsp;</td>
+      <td>
+          <img src="{{ i.photo }}" height="200px" width="200px"><br>
+          {{ i.name }}&nbsp;<br>
+     [ {{ i.DEPARTMENT.department }} ]</td>
+      <td>{{ i.dob }}&nbsp;</td>
+      <td>{{ i.gender }}&nbsp;</td>
+      <td>{{ i.qual }}&nbsp;</td>
+      <td>{{ i.place }}&nbsp;<br>
+     {{ i.pin }}&nbsp&nbsp;<br>
+    {{ i.post }}&nbsp;&nbsp;<br>
+      {{ i.district }}&nbsp;</td>
+      <td>{{ i.email }}&nbsp;<br><br>
+        {{ i.contact }}&nbsp;</td>
+      <td width="50px"><a href="/myapplication/edit_doctor/{{ i.id }}" class="btn btn-info">Edit</a></td>
+      <td width="50px"><a href="/myapplication/delete_doctor/{{ i.id }}" class="btn btn-danger">Delete</a></td>
+    <td width="50px"><a href="/myapplication/admin_chat_with_doctor/{{ i.LOGIN.id }}" class="btn btn-primary">Chat</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

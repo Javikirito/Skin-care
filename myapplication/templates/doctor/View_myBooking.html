@@ -1,0 +1,24 @@
+{% extends 'doctor/doctor_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/view_booking_post/">
+  <table class="table table-bordered">
+    <tr>
+      <th width="15" scope="col">SNo</th>
+      <th width="60" scope="col">Name</th>
+      <th width="53" scope="col">Age</th>
+      <th width="60" scope="col">Gender</th>
+      <th width="70" scope="col">Place</th>
+    </tr>
+      {% for i in vdb %}
+
+    <tr>
+      <th width="50px">{{ forloop.counter }}&nbsp;</th>
+      <td>&nbsp;{{ i.USER.name }}</td>
+      <td>&nbsp;{{ i.USER.age }}</td>
+      <td>&nbsp;{{ i.USER.gender }}</td>
+      <td>&nbsp;{{ i.USER.place }}</td>
+    </tr>
+      {% endfor  %}
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+    <form id="form1" name="form1" method="post" action="/myapplication/view_p_booking_post/">
+ <table class="table table-bordered">
+    <tr>
+      <th width="50px">date from </th>
+      <th width="70px"><input type="date" name="d1" class="form-control"  /></th>
+      <th rowspan="2" span="1" scope="col"><input type="submit" name="Submit" value="Search" class="btn btn-dark" /></th>
+    </tr>
+      <tr>
+         <th width="50px">To</th>
+      <th scope="col"><input type="date" name="d2" class="form-control"  /></th>
+      </tr>
+  </table>
+
+  <table class="table table-bordered">
+    <tr>
+      <th width="15" scope="col">SNo</th>
+      <th width="60" scope="col">Dr.Info</th>
+      <th width="53" scope="col">Schedule Info</th>
+      <th width="60" scope="col">schedule Date</th>
+        <th></th>
+        <th></th>
+    </tr>
+       {% for i in pvb %}
+    <tr>
+      <th width="50px">{{ forloop.counter }}&nbsp;</th>
+      <td><img src="{{ i.SCHEDULE.DOCTOR.photo }}" width="150" height="150"><br>
+          {{i.SCHEDULE.DOCTOR.name}}<br>
+           [{{ i.SCHEDULE.DOCTOR.DEPARTMENT.department }}]</td>
+      <td>{{ i.SCHEDULE.time }}-<br>
+      {{ i.SCHEDULE.timeto }}</td>
+      <td>{{ i.SCHEDULE.date }}&nbsp;</td>
+      <td width="50px"><a href="/myapplication/patient_chat_with_doctor/{{ i.SCHEDULE.DOCTOR.LOGIN.id }}" class="btn btn-info">Chat</a></td>
+      <td width="50px"><a href="/myapplication/delete_pschedule/{{ i.id }}" class="btn btn-danger">Cancel</a></td>
+    </tr>
+      {% endfor  %}
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'doctor/doctor_temp.html' %}
+{% block body %}
+<table class="table table-bordered">
+  <tr>
+    <th colspan="2" scope="col"><img src="{{ ddp.photo }}" height="200px" width="200px"></th>
+  </tr>
+  <tr>
+    <th scope="row">Name</th>
+    <td>{{ ddp.name }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th scope="row">D.O.B</th>
+    <td>{{ ddp.dob }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td>&nbsp;{{ ddp.gender }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Qualification</th>
+    <td>{{ ddp.qual }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th scope="row">Department</th>
+    <td>{{ ddp.DEPARTMENT.department }}&nbsp;</td>
+  </tr>
+  <tr>
+    <th scope="row">Address</th>
+    <td>&nbsp;{{ ddp.place }}
+    <br><br>{{ ddp.post }}
+    <br><br>{{ ddp.pin }}</td>
+  </tr>
+  <tr>
+    <th scope="row">E-mail</th>
+    <td>{{ ddp.email }}&nbsp;</td>
+  </tr>
+</table>
+{% endblock %}

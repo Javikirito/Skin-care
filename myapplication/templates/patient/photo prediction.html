@@ -1,0 +1,27 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+    <tr>
+      <th width="87" scope="col">Browse </th>
+      <th width="224" scope="col"><input type="file" name="file" /></th>
+    </tr>
+    <tr><br>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="Upload and Predict" class="btn btn-dark" /></th>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <table class="table table-bordered">
+    <tr>
+      <th width="100px" >Disease</th>
+      <td  scope="col">&nbsp;</td>
+    </tr>
+    <tr>
+      <th width="100px">Description</th>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

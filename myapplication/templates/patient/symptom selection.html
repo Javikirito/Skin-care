@@ -1,0 +1,28 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+<h2>Choose Symptoms</h2>
+<table class="table table-bordered">
+  <tr>
+    <th scope="col"><input type="checkbox" name="checkbox" value="checkbox" /></th>
+    <th scope="col">Symptom</th>
+  </tr>
+  <tr>
+    <th colspan="2" scope="col"><input type="submit" name="Submit" value="Submit" class="btn btn-dark" /></th>
+    </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table class="table table-bordered">
+  <tr>
+    <th width="162" scope="col">Disease</th>
+    <th width="133" scope="col">&nbsp;</th>
+  </tr>
+  <tr>
+    <th scope="row">Description</th>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</form>
+{% endblock %}

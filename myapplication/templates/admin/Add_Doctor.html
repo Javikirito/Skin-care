@@ -1,0 +1,90 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form action="/myapplication/admin_adddoctor_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table  class="table table-bordered">
+    <tr>
+      <th>Name</th>
+      <td><input type="text"  placeholder="Name" name="textfield" required/></td>
+    </tr>
+    <tr>
+      <th>Date of Birth </th>
+      <td><input type="date" name="textfield2" /></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th><p>
+        <label>
+          <input type="radio" name="RadioGroup1" value="Male" />
+          Male</label>
+        <br />
+        <label>
+          <input type="radio" name="RadioGroup1" value="Female" />
+          Female</label>
+        <br />
+        <label>
+          <input type="radio" name="RadioGroup1" value="Others" />
+          Others</label>
+        <br />
+      </p></th>
+    </tr>
+    <tr>
+      <th>Qualification</th>
+      <th><select name="select" size="1">
+          <option value="mbbs">MBBS</option>
+           <option value="bams">BAMS</option>
+           <option value="ahms">AHMS</option>
+            </select></th>
+    </tr>
+    <tr>
+      <th>Photo</th>
+      <td><input type="file" name="file"  /></td>
+    </tr>
+    <tr>
+      <th>Place</th>
+      <td><input type="text"   placeholder="place" name="textfield3" /></td>
+    </tr>
+    <tr>
+      <th>PIN</th>
+      <td><input type="text"  placeholder="pincode" name="textfield4" /></td>
+    </tr>
+    <tr>
+      <th>Post</th>
+      <td><input type="text"  placeholder="post" name="textfield5" /></td>
+    </tr>
+    <tr>
+      <th>District</th>
+      <td><input type="text" placeholder="district" name="textfield6" /></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><input type="text" placeholder="Email" name="textfield7" /></td>
+    </tr>
+    <tr>
+      <th>Department</th>
+      <td><select name="select2">
+          {% for i in data %}
+
+          <option value="{{ i.id }}">{{ i.department }}</option>
+
+
+         {% endfor %}
+
+
+
+      </select>      </td>
+    </tr>
+    
+    
+    <tr>
+      <th>Contact No. </th>
+      <td><input type="number" name="textfield8" placeholder="Contact" required pattern="[0-9]{10}" required /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit"  class="btn btn-dark"value="Submit" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

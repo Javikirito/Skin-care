@@ -1,0 +1,52 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
+<form id="form1" name="form1" method="post" action="">
+    <table class="table table-striped table-hover">
+    <tr>
+        <td><a href="/myapplication/admin_adddepartment/">ADD DEPARTMENT</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_viewdepartment">VIEW DEPARTMENT</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_adddisease">ADD DISEASE</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_viewdisease">VIEW DISEASE</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_adddoctor">ADD DOCTOR</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_viewdoctor">VIEW DOCTOR</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_addschedule">ADD SCHEDULE</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_viewshedule">VIEW SCHEDULE</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_addsymptoms">ADD SYMPTOMS</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_viewsymptoms">VIEW SYMPTOMS</a></td>
+    </tr>
+    <!-- <tr> -->
+        <!-- <td><a href="/myapplication/admin_changepassword">CHANGE PASSWORD</a> </td> -->
+    <!-- </tr> -->
+    <tr>
+        <td><a href="/myapplication/admin_viewfeedback">VIEW FEEDBACK</a></td>
+    </tr>
+    <tr>
+        <td><a href="/myapplication/admin_viewpayment">VIEW PAYMENTS</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

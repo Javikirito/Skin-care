@@ -1,0 +1,31 @@
+{% extends 'patient/patient_temp.html' %}
+{% block body %}
+<table class="table table-bordered">
+  <tr>
+    <th scope="col"><input type="text" name="textfield2" class="form-control"/></th>
+    <th scope="col"><input type="submit" name="Submit2" value="Search" class="btn btn-dark" /></th>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width="28" rowspan="2" scope="col"><h3>#</h3></th>
+      <th colspan="2" scope="col">Time</th>
+      <th width="79" rowspan="2" scope="col">&nbsp;</th>
+    </tr>
+    <tr>
+      <th width="124" scope="col">From</th>
+      <th width="130" scope="col">To</th>
+    </tr>
+      {% for i in res %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ i.time }}&nbsp;</td>
+      <td>{{ i.timeto }}&nbsp;</td>
+      <td><a href="/myapplication/patient_booking/{{ i.id }}" class="btn btn-primary">Book</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

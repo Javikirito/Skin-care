@@ -1,0 +1,43 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/viewschedule_post">
+  <table class="table table-bordered">
+    <tr>
+      <th width="50px">date from </th>
+      <th width="70px"><input type="date" name="d1" class="form-control"  /></th>
+      <th rowspan="2" span="1" scope="col"><input type="submit" name="Submit" value="Search" class="btn btn-dark" /></th>
+         <th scope="col" ><input name="textfield3" type="text" class="form-control"  /></th>
+      <th scope="col"><input type="submit" name="Submit" value="search"  class="btn btn-dark" /></th>
+    </tr>
+      <tr>
+         <th width="50px">To</th>
+      <th scope="col"><input type="date" name="d2" class="form-control"  /></th>
+      </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered">
+    <tr>
+      <th width="50">SNo</th>
+        <th width="195" scope="col">Doctor</th>
+      <th width="195" scope="col">Department</th>
+      <th width="62" scope="col">Date</th>
+      <th width="56" scope="col">Time</th>
+      <th width="30" scope="col">&nbsp;</th>
+      <th width="39" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in vsh %}
+    <tr>
+      <td width="50px">{{ forloop.counter }}&nbsp;</td>
+        <td>{{ i.DOCTOR.name }}&nbsp;</td>
+      <td>{{ i.DEPARTMENT.department }}&nbsp;</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>&nbsp;{{ i.time }}</td>
+      <td width="50px"><a href="/myapplication/edit_schedule/{{ i.id }}" class="btn btn-info">Edit</a></td>
+      <td width="50px"><a href="/myapplication/delete_schedule/{{ i.id }}" class="btn btn-danger">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

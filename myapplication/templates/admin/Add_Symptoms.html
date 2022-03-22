@@ -1,0 +1,18 @@
+{% extends 'admin/admin_temp.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapplication/admin_addsymptoms_post">
+ <table  class="table table-bordered">
+    <tr>
+
+      <th>SYMPTOMS</th>
+
+      <td scope="col"><textarea name="textarea"></textarea></td>
+    </tr>
+    <tr>
+      <td scope="row">&nbsp;</td>
+      <td><input type="submit" name="Submit" class="btn btn-dark" value="ADD" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
